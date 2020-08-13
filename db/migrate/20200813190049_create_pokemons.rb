@@ -8,7 +8,8 @@ class CreatePokemons < ActiveRecord::Migration[6.0]
       t.string :pokedex_entry
       t.integer :speed
       t.integer :defence
-      t.integer :attack
+      t.integer :original_attack
+      t.integer :battle_attack 
       t.integer :max_hp
       t.integer :current_hp
       t.integer :level
