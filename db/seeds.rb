@@ -1,7 +1,24 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Type.destroy_all
+require 'faker'
+
+types = []
+
+types << Type.create(name: "water")
+types << Type.create(name: "fire")
+types << Type.create(name: "grass")
+types << Type.create(name: "bug")
+types << Type.create(name: "flying")
+types << Type.create(name: "fighting")
+types << Type.create(name: "electric")
+types << Type.create(name: "ground")
+types << Type.create(name: "ice")
+types << Type.create(name: "normal")
+types << Type.create(name: "poison")
+types << Type.create(name: "psychic")
+types << Type.create(name: "rock")
+
+ids = types.map {|type| type.id}
+
+10.times do
+Pokemon.create(type_id: ids.sample, species: Faker::Games::Pokemon.name, speed: rand(1..10), defence: rand(1..10), original_attack: rand(1..10), battle_attack: rand(1..10), max_hp: rand(1..10), current_hp: rand(1..10), level: 1)
+end
