@@ -9,7 +9,8 @@ before_action :find_trainer, only: [:show, :edit, :update]
 
   def update
     @trainer.update(trainer_params)
-    redirect_to new_battle_path(@trainer)
+    redirect_to pokemon_path(@trainer.pokemons[0])
+    
   end
 
   def show

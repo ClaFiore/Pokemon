@@ -1,1 +1,14 @@
 <h1>Welcome to the Arena</h1>
+<h2> <%= @battle.user.name %> VS <%= @battle.opponent.name%>
+<br>
+<h3> Your pokemon: </h3>
+<h4><% @battle.user.pokemons.each do |p| %>
+    <%= p.species %>
+    <% end %></h4> 
+<br>
+<h3> Your opponent's pokemon: </h3>
+<h4><% @battle.opponent.pokemons.each do |p| %>
+        <%= p.species %>
+        <% end %></h4>
+
+<% link_to "Attack" %>

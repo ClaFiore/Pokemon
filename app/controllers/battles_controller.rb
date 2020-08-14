@@ -14,7 +14,6 @@ class BattlesController < ApplicationController
 
     @battle = Battle.create(battle_params)
     @battle.opponent_pokemon
-    byebug
     redirect_to battle_path(@battle)
   end
 

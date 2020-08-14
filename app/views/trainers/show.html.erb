@@ -1,7 +1,7 @@
-<h1><%= @trainer.name %> Details Page</h1>
-<% @trainer.pokemons.each do |p| %>
-    <%= p.species %>
-    <% end %>
+<h3><%= "Your trainer is #{@trainer.name}, now pick your pokemon" %> </h3>
+
+<%= link_to "Pick Your Pokemon", edit_trainer_path(@trainer) %>
+
 
 
 
