@@ -1,0 +1,7 @@
+<%= form_for @trainer do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :pokemons %> 
+    <%= f.collection_select :pokemon_ids, Pokemon.all, :id, :species %>
+    <%= f.submit %>
+    <% end %>

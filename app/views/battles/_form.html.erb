@@ -1,6 +1,5 @@
 <%= form_for @battle do |f| %>
-
-    <%= f.hidden_field :user_id%>
+    <%= f.hidden_field :user_id, :value => @user.id%>
     <%= f.label :opponent%>
     <%= f.collection_select :opponent_id, Trainer.all, :id, :name%>
     <%= f.submit "Start Battle" %>

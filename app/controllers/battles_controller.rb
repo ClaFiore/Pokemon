@@ -1,9 +1,12 @@
 class BattlesController < ApplicationController
+  
   def show
     @battle = Battle.find(params[:id])
   end
   
   def new
+
+    @user = Trainer.find(params[:format])
     @battle = Battle.new
     render :new
   end

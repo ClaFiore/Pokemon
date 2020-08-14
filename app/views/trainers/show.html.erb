@@ -1,4 +1,7 @@
 <h1><%= @trainer.name %> Details Page</h1>
+<% @trainer.pokemons.each do |p| %>
+    <%= p.species %>
+    <% end %>
 
 
 
