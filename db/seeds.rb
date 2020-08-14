@@ -1,6 +1,7 @@
 Type.destroy_all
 Pokemon.destroy_all
 Trainer.destroy_all
+Battle.destroy_all
 require 'faker'
 
 types = []

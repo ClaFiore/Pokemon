@@ -5,14 +5,15 @@ class BattlesController < ApplicationController
   end
   
   def new
-
     @user = Trainer.find(params[:format])
     @battle = Battle.new
     render :new
   end
 
   def create
+
     @battle = Battle.create(battle_params)
+    @battle.opponent_pokemon
     byebug
     redirect_to battle_path(@battle)
   end
