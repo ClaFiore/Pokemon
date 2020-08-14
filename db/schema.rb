@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_13_190627) do
+ActiveRecord::Schema.define(version: 2020_08_14_143157) do
+
+  create_table "battles", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "opponent_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "pokemons", force: :cascade do |t|
     t.integer "trainer_id"
@@ -25,6 +32,12 @@ ActiveRecord::Schema.define(version: 2020_08_13_190627) do
     t.integer "max_hp"
     t.integer "current_hp"
     t.integer "level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "trainers", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
