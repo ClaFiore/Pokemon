@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  get "/", to: "static#index", as: "home"
+  resources :pokemons, only: [:index, :show]
+  resources :trainers, only: [:index, :show]
+  resources :battles, only: [:show, :new, :create]
+
+
 end

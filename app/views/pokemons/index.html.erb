@@ -1,0 +1,8 @@
+<h1>All Pokemons</h1>
+<ul>
+<% @pokemons.each do |p| %>
+    <li><%= link_to p.species, pokemon_path(p) %></li>
+    <% end %>
+</ul>
+
+<%= link_to "Homepage", home_path %>

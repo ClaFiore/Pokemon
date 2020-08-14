@@ -27,3 +27,5 @@ end
 10.times do
 Trainer.create(name:Faker::Name.name)
 end
+
+Pokemon.create(nickname: "Lucy", type_id: ids.sample, species: Faker::Games::Pokemon.name, speed: rand(1..10), defence: rand(1..10), original_attack: rand(1..10), battle_attack: rand(1..10), max_hp: rand(1..10), current_hp: rand(1..10), level: 1)

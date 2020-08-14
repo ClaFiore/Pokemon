@@ -1,0 +1,12 @@
+<% if @pokemon.nickname == nil %>
+<h1><%="Pokemon Detail Page"%></h1>
+<% else %>
+<h1> <%= "#{@pokemon.nickname} Details Page"%> </h1>
+<% end %>
+
+<h3> Species: <%= @pokemon.species%>
+<h3> Speed: <%= @pokemon.speed %>
+<h3> Attack: <%= @pokemon.original_attack%>
+<h3> Defence: <%= @pokemon.defence%>
+<h3> Health Points: <%= @pokemon.max_hp%>
+<h3> Level: <%= @pokemon.level%>

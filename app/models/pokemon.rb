@@ -2,6 +2,8 @@ class Pokemon < ApplicationRecord
     belongs_to :trainer, optional: true
     has_one :type
 
+
+
 def strong_against?(opponent)
         if self.type.name == "water" && opponent.type.name == "fire" || opponent.type.name == "rock" || opponent.type.name == "ground"
             self.battle_attack = 1.5 * self.original_attack
