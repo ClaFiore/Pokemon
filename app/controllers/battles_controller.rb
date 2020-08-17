@@ -16,6 +16,13 @@ class BattlesController < ApplicationController
     @battle.opponent_pokemon
     redirect_to battle_path(@battle)
   end
+  def attack
+    
+    @battle = Battle.find(params[:format])
+    
+    @battle.attack
+    render :attack
+  end
 
 private
 

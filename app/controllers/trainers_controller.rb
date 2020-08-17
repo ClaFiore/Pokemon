@@ -9,7 +9,9 @@ before_action :find_trainer, only: [:show, :edit, :update]
 
   def update
     @trainer.update(trainer_params)
-    redirect_to pokemon_path(@trainer.pokemons[0])
+    $chosen_pokemon = params[:trainer][:pokemon_ids]
+    redirect_to pokemon_path($chosen_pokemon)
+
     
   end
 

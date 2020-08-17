@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :pokemons, only: [:index, :show]
   resources :trainers, only: [:index, :show, :edit, :update]
   resources :battles, only: [:show, :new, :create]
-
+  get "/attack", to: "battles#attack", as: "attack"
 
 end

@@ -1,0 +1,9 @@
+<h1>Welcome to the Arena</h1>
+<h2> <%= @battle.user.name %> VS <%= @battle.opponent.name%>
+<br>
+<h3> Your pokemon: </h3>
+
+   <%= @battle.user_pokemon.species %>
+<br>
+<h3> Your opponent's pokemon: </h3>
+<h4><%= @battle.opponent_pokemon.species  %> </h4>
