@@ -10,5 +10,5 @@
         <div class=header><%= "#{$first.species} is the winner!!" %></div>
         <%= render partial: "gameover" %>
     <% else %>
-    <%= link_to "Continue Battle", counterattack_path(battle) %> 
+    <%= link_to "Continue Battle", counterattack_path(@battle) %> 
     <% end %>

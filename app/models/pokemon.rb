@@ -1,6 +1,9 @@
+
 class Pokemon < ApplicationRecord
     belongs_to :trainer, optional: true
     has_one :type
+
+
 
     def faint?
         if self.current_hp <= 0 

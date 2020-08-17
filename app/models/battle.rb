@@ -1,3 +1,4 @@
+require 'faker'
 class Battle < ApplicationRecord
     belongs_to :user, class_name: 'Trainer'
     belongs_to :opponent, class_name: 'Trainer'
@@ -42,8 +43,14 @@ class Battle < ApplicationRecord
       $first.faint?
    end
 
+ 
    def game_over
-      Rails.application.load_seed
+      Pokemon.destroy_all
+      10.times do
+         x = rand(1..10) 
+         y = rand(1..10) 
+       Pokemon.create(type_id: ids.sample, species: Faker::Games::Pokemon.name, speed: rand(1..10), defence: rand(1..10), original_attack: y, battle_attack: y, max_hp: x, current_hp: x, level: 1)
+       end
    end
    
 
