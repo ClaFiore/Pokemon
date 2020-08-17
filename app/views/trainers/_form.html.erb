@@ -2,11 +2,7 @@
    
     <%= f.label :name %>
     <%= f.text_field :name %>
-    <%= f.label :pokemons %> 
-        <% if @trainer.pokemons.empty? %>
-        <%= f.collection_select :pokemon_ids, Pokemon.all, :id, :species %>
-        <% else %>
-        <%= f.collection_select :pokemon_ids, @trainer.pokemons, :id, :species %>
-        <% end %>
+    <%= f.label :pokemons, "Pokemon"%> 
+    <%= f.collection_select :pokemon_ids, Pokemon.all, :id, :species %>
     <%= f.submit "Catch" %>
     <% end %>
