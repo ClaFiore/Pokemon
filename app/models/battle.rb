@@ -21,14 +21,14 @@ class Battle < ApplicationRecord
              $second = self.opponent_pokemon
              $second.current_hp -= $first.battle_attack
             $second.faint?
-             byebug
+           
                
         else self.user_pokemon.speed < self.opponent_pokemon.speed
              $first = self.opponent_pokemon
              $second = self.user_pokemon 
             $second.current_hp -= $first.battle_attack
             $second.faint?
-            byebug
+           
             
         end
      end 

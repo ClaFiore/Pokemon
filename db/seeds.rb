@@ -23,7 +23,9 @@ types << Type.create(name: "rock")
 ids = types.map {|type| type.id}
 
 10.times do
-Pokemon.create(type_id: ids.sample, species: Faker::Games::Pokemon.name, speed: rand(1..10), defence: rand(1..10), original_attack: rand(1..10), battle_attack: rand(1..10), max_hp: rand(1..10), current_hp: rand(1..10), level: 1)
+  x = rand(1..10) 
+  y = rand(1..10) 
+Pokemon.create(type_id: ids.sample, species: Faker::Games::Pokemon.name, speed: rand(1..10), defence: rand(1..10), original_attack: y, battle_attack: y, max_hp: x, current_hp: x, level: 1)
 end
 10.times do
 Trainer.create(name:Faker::Name.name)
