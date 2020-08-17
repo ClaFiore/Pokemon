@@ -13,26 +13,23 @@ class Battle < ApplicationRecord
         Pokemon.all.find($chosen_pokemon)
      end
  
-    
-     def attack
-       if  self.user_pokemon.speed > self.opponent_pokemon.speed
-            @first = self.user_pokemon
-            @second = self.opponent_pokemon
-          
-            self.opponent_pokemon.current_hp -= self.user_pokemon.battle_attack    
-       else self.user_pokemon.speed < self.opponent_pokemon.speed
-            @first = self.opponent_pokemon
-            @second = self.user_pokemon 
-           
-            self.user_pokemon.current_hp -= self.opponent_pokemon.battle_attack
-       end
-    
-        #     a = []
-        #    a << self.user.user_pokemon
-        #    a << self.opponent.opponent_pokemon
-        #    a.sample.current_hp -=  
-        
+
+
+    def attack
+        if  self.user_pokemon.speed > self.opponent_pokemon.speed
+             $first = self.user_pokemon
+             $second = self.opponent_pokemon
+             $second.current_hp -= $first.battle_attack
+            $second.faint?
+             byebug
+               
+        else self.user_pokemon.speed < self.opponent_pokemon.speed
+             $first = self.opponent_pokemon
+             $second = self.user_pokemon 
+            $second.current_hp -= $first.battle_attack
+            $second.faint?
+            byebug
+            
+        end
      end 
-
-
 end

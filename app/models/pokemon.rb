@@ -2,7 +2,14 @@ class Pokemon < ApplicationRecord
     belongs_to :trainer, optional: true
     has_one :type
 
-
+    def faint?
+        if self.current_hp <= 0 
+           self.current_hp = 0
+            return true
+        else 
+            return false
+        end
+    end
 
 def strong_against?(opponent)
         if self.type.name == "water" && opponent.type.name == "fire" || opponent.type.name == "rock" || opponent.type.name == "ground"

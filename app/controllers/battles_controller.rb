@@ -21,7 +21,6 @@ class BattlesController < ApplicationController
     
     @battle = Battle.find(params[:format])
     @battle.attack
-    
   end
 
 private
