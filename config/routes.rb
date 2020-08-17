@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :trainers, only: [:index, :show, :edit, :update]
   resources :battles, only: [:show, :new, :create]
   get "/attack", to: "battles#attack", as: "attack"
+  get "/counterattack", to: "battles#counterattack", as: "counterattack"
 
 end

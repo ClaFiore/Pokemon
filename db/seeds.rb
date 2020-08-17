@@ -27,8 +27,11 @@ ids = types.map {|type| type.id}
   y = rand(1..10) 
 Pokemon.create(type_id: ids.sample, species: Faker::Games::Pokemon.name, speed: rand(1..10), defence: rand(1..10), original_attack: y, battle_attack: y, max_hp: x, current_hp: x, level: 1)
 end
+
+trainers = ["Red/Ash", "Blue/Gary", "Brock", "Misty", "Jessie", "James", "May", "Lucas", "Dawn", "Nate"]
+
 10.times do
-Trainer.create(name:Faker::Name.name)
+Trainer.create(name: trainers.sample)
 end
 
 Pokemon.create(nickname: "Lucy", type_id: ids.sample, species: Faker::Games::Pokemon.name, speed: rand(1..10), defence: rand(1..10), original_attack: rand(1..10), battle_attack: rand(1..10), max_hp: rand(1..10), current_hp: rand(1..10), level: 1)

@@ -1,6 +1,14 @@
 <%= render partial: "arena" %>
+
 <h1> Turn 1 </h1>
+
 <%= "#{$first.species} is attacking  #{$second.species}" %> <br>
 <%= "#{$second.species} took #{$first.battle_attack} damage" %> <br>
-<%= "#{$second.species}'s health dropped from #{$second.max_hp} to #{$second.current_hp}" %>
-
+<%= "#{$second.species}'s health dropped from #{$second.max_hp} to #{$second.current_hp}" %> <br>
+    <% if $second.faint? %> 
+        <%= "#{$second.species} has fainted" %> <br>
+        <div class=header><%= "#{$first.species} is the winner!!" %></div>
+        <%= render partial: "gameover" %>
+    <% else %>
+    <%= link_to "Continue Battle", counterattack_path(battle) %> 
+    <% end %>

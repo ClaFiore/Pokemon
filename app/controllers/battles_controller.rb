@@ -11,17 +11,22 @@ class BattlesController < ApplicationController
   end
 
   def create
-
     @battle = Battle.create(battle_params)
     @battle.random_opp_pokemon
-
     redirect_to battle_path(@battle)
   end
+
   def attack
-    
     @battle = Battle.find(params[:format])
     @battle.attack
+    render :attack
   end
+
+  def counterattack
+    @battle = Battle.find(params[:format])
+    render :counterattack
+  end
+
 
 private
 
