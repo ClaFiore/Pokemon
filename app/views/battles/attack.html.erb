@@ -3,7 +3,8 @@
 <h1> Turn 1 </h1>
 
 <%= "#{$first.species} is attacking  #{$second.species}" %> <br>
-<%= "#{$second.species} took #{$first.battle_attack} damage" %> <br>
+<%= "#{$second.species} defended #{$second.defence} damage" %> <br>
+<%= "#{$second.species} took #{$final_damage} damage" %> <br>
 <%= "#{$second.species}'s health dropped from #{$second.max_hp} to #{$second.current_hp}" %> <br>
     <% if $second.faint? %> 
         <%= "#{$second.species} has fainted" %> <br>

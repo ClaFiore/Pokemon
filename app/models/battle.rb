@@ -16,19 +16,26 @@ class Battle < ApplicationRecord
       Pokemon.all.find($chosen_pokemon)
    end
  
+
    def attack
-      if self.user_pokemon.speed > self.opponent_pokemon.speed
+      if self.user_pokemon.speed > self.opponent_pokemon.speed || self.user_pokemon.speed == self.opponent_pokemon.speed
          $first = self.user_pokemon
          $second = self.opponent_pokemon
-         $second.current_hp -= $first.battle_attack
+         $final_damage = ($first.battle_attack - $second.defence)
+            if $second.defence > $first.battle_attack
+               $final_damage = 1
+            end
+         $second.current_hp -= $final_damage
          $second.faint?
-      else self.user_pokemon.speed < self.opponent_pokemon.speed
+      elsif self.user_pokemon.speed < self.opponent_pokemon.speed
          $first = self.opponent_pokemon
          $second = self.user_pokemon 
-         $second.current_hp -= $first.battle_attack
-         byebug
+         $final_damage = ($first.battle_attack - $second.defence)
+            if $second.defence > $first.battle_attack
+               $final_damage = 1
+            end
+         $second.current_hp -= $final_damage
          $second.faint?
-         
       end
       if !$first.faint? && !$second.faint?
          counterattack
@@ -37,7 +44,11 @@ class Battle < ApplicationRecord
    end 
 
    def counterattack
-      $first.current_hp -= $second.battle_attack
+      $second_damage = ($second.battle_attack - $first.defence)
+            if $first.defence > $second.battle_attack
+               $second_damage = 1
+            end
+         $first.current_hp -= $second_damage
       $first.faint?
    end
   
